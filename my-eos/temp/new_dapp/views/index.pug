@@ -1,0 +1,22 @@
+doctype html
+head
+  title EOS Table
+form(method='post' action='table/deploy')
+  center
+    h2 Bank Details
+    h4 Enter the account number
+    input(type='text' name='ac_no')
+    br
+    h4 Enter the account name
+    input(type='text' name='name')
+    br
+    h4 Enter the Amount
+    input(type='text' name='amt')
+    br
+    br
+    input(type='submit' value='Push details')
+    br
+    br
+form(method='get' action='table/data')
+  center    
+    input(type='submit' value='Show Details')

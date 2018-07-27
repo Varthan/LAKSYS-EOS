@@ -1,0 +1,124 @@
+doctype html
+head
+  title Bootstrap Example
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+br
+br
+.container
+  ul.nav.nav-tabs
+    li.active
+      a(data-toggle='tab' href='#home') Create Account
+    li
+      a(data-toggle='tab' href='#menu1') Deposit
+    li
+      a(data-toggle='tab' href='#menu2') Withdraw
+    li
+      a(data-toggle='tab' href='#menu3') Transfer
+    li
+      a(data-toggle='tab' href='#menu4') Table Details
+  .tab-content
+    #home.tab-pane.fade.in.active
+      br
+      br
+      h3 Account Creation
+      br
+      form(action='bank/create' method='post' target='_blank')
+        .row
+          .form-group.col-sm-4
+            label(for='usr') Account Number
+            input.form-control(type='text' name='ac_no')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Account Name
+            input.form-control(type='text' name='ac_name')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Amount
+            input.form-control(type='text' name='ac_amt')
+        .row
+          .form-group.col-sm-4
+            br
+            input.btn.btn-primary(type='submit')
+    #menu1.tab-pane.fade
+      br
+      br
+      h3 Deposit Amount
+      br
+      form(action='bank/dep' method='post' target='_blank')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Account Name
+            input.form-control(type='text' name='dep_name')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Amount
+            input.form-control(type='text' name='dep_amt')
+        .row
+          .form-group.col-sm-4
+            br
+            input.btn.btn-primary(type='submit')
+    #menu2.tab-pane.fade
+      br
+      br
+      h3 Withdraw Amount
+      br
+      form(action='bank/wit' method='post' target='_blank')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Account Name
+            input.form-control(type='text' name='wit_name')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Amount
+            input.form-control(type='text' name='wit_amt')
+        .row
+          .form-group.col-sm-4
+            br
+            input.btn.btn-primary(type='submit')
+    #menu3.tab-pane.fade
+      br
+      br
+      h3 Transfer Amount
+      br
+      form(action='bank/tran' method='post' target='_blank')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') From Account
+            input.form-control(type='text' name='f_name')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') To Account
+            input.form-control(type='text' name='t_name')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Amount
+            input.form-control(type='text' name='t_amt')
+        .row
+          .form-group.col-sm-4
+            br
+            input.btn.btn-primary(type='submit')
+    #menu4.tab-pane.fade
+      br
+      br
+      h3 Show Table
+      br
+      form(action='bank/table' method='get' target='_blank')
+        input.btn.btn-primary(type='submit')
+      br
+      br
+      h3 Remove Account
+      br
+      form(action='bank/dereg' method='post' target='_blank')
+        .row
+          .form-group.col-sm-4
+            label(for='pwd') Account Name
+            input.form-control(type='text' name='de_ac')
+        .row
+          .form-group.col-sm-4
+            br
+            input.btn.btn-primary(type='submit')
+
